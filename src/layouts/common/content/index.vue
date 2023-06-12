@@ -1,10 +1,10 @@
 <template>
   <main
     class="common-content transition-all-300"
-    :class="{ 'c-aside--fold': appStore.siderCollapse }"
+    :class="{ 'c-sider--fold': appStore.siderCollapse }"
   >
     <div class="content-outer">
-      <div class="content-inner"></div>
+      <div class="mock"></div>
     </div>
   </main>
 </template>
@@ -19,25 +19,45 @@ const appStore = useAppStore();
 .common-content {
   position: relative;
   flex: 1;
-  padding-top: calc(var(--common-header-height) + var(--common-tab-height));
-  padding-left: var(--common-aside-width);
+  margin-top: calc(var(--common-header-height) + var(--common-tab-height));
+  padding-left: var(--common-sider-width);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #e1e1e1 transparent;
 
-  &.c-aside--fold {
+  &::-webkit-scrollbar-thumb {
+    background-color: #e1e1e1;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #e1e1e1;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: #0000;
+    border-radius: 0;
+  }
+
+  &.c-sider--fold {
     padding-left: var(--common-sider-collapsed-width);
   }
 
   .content-outer {
-    width: 100%;
-    height: 100%;
     padding: 20px;
   }
 
-  .content-inner {
+  .mock {
     width: 100%;
-    height: 100%;
-    background: var(--c-white);
-    box-shadow: 0 0 4px #00152914;
-    border-radius: 12px;
+    height: 200px;
+    background: #fff;
+    border-radius: 10px;
   }
 }
 </style>

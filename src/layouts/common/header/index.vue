@@ -1,7 +1,7 @@
 <template>
   <header
     class="common-header transition-all-300 position-w-full"
-    :class="{ 'c-aside--fold': appStore.siderCollapse }"
+    :class="{ 'c-sider--fold': appStore.siderCollapse }"
   >
     <div class="header-outer">
       <div class="collapse-wrap" @click="appStore.setSiderCollapse(!appStore.siderCollapse)">
@@ -20,10 +20,10 @@ const appStore = useAppStore();
 <style scoped lang="scss">
 .common-header {
   height: var(--common-header-height);
-  padding-left: var(--common-aside-width);
+  padding-left: var(--common-sider-width);
   z-index: 97;
 
-  &.c-aside--fold {
+  &.c-sider--fold {
     padding-left: var(--common-sider-collapsed-width);
   }
 

@@ -1,7 +1,7 @@
 <template>
   <view
     class="common-tab transition-all-300 position-w-full"
-    :class="{ 'c-aside--fold': appStore.siderCollapse }"
+    :class="{ 'c-sider--fold': appStore.siderCollapse }"
   >
     <div class="tab-outer"></div>
   </view>
@@ -17,10 +17,10 @@ const appStore = useAppStore();
 .common-tab {
   top: var(--common-header-height);
   height: var(--common-tab-height);
-  padding-left: var(--common-aside-width);
+  padding-left: var(--common-sider-width);
   z-index: 96;
 
-  &.c-aside--fold {
+  &.c-sider--fold {
     padding-left: var(--common-sider-collapsed-width);
   }
 

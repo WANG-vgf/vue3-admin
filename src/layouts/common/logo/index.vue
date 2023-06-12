@@ -1,5 +1,5 @@
 <template>
-  <view class="common-logo" :class="{ 'c-aside--fold': appStore.siderCollapse }"> LOGO </view>
+  <view class="common-logo" :class="{ 'c-sider--fold': appStore.siderCollapse }"> LOGO </view>
 </template>
 
 <script setup lang="ts">
@@ -17,7 +17,7 @@ const appStore = useAppStore();
   font-weight: bold;
   height: var(--common-header-height);
 
-  &.c-aside--fold {
+  &.c-sider--fold {
     transform: scale(0.5);
   }
 }
