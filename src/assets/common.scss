@@ -1,0 +1,19 @@
+.transition-all-300 {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+.position-h-full {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.position-w-full {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
