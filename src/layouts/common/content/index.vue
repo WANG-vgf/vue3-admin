@@ -4,7 +4,7 @@
     :class="{ 'c-sider--fold': appStore.siderCollapse }"
   >
     <div class="content-outer">
-      <div class="mock"></div>
+      <router-view />
     </div>
   </main>
 </template>

@@ -1,12 +1,12 @@
 <template>
-  <sider
+  <div
     class="common-sider transition-all-300 position-h-full"
     :class="{ 'c-sider--fold': appStore.siderCollapse }"
   >
     <common-logo />
 
     <sider-menu />
-  </sider>
+  </div>
 </template>
 
 <script setup lang="ts">

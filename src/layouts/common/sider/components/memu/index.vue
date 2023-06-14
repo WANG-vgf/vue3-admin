@@ -1,6 +1,6 @@
 <template>
   <el-menu
-    default-active="2"
+    default-active="1-1"
     class="sider-menu"
     :collapse="appStore.siderCollapse"
     unique-opened
@@ -18,7 +18,7 @@
       </el-menu-item-group>
 
       <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
+        <el-menu-item index="1-3" @click="handleMenuItemClick">item three</el-menu-item>
       </el-menu-item-group>
 
       <el-sub-menu index="1-4">
@@ -28,16 +28,30 @@
     </el-sub-menu>
 
     <el-menu-item index="2">
-      <el-icon><icon-menu /></el-icon>
+      <el-icon><location /></el-icon>
       <template #title>Navigator Two</template>
     </el-menu-item>
   </el-menu>
 </template>
 
 <script setup lang="ts">
-import { useAppStore } from '@/stores';
+import { useAppStore, useRouteStore } from '@/stores';
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute();
+const router = useRouter();
 
 const appStore = useAppStore();
+const routeStore = useRouteStore();
+
+// console.log(routeStore.menus);
+
+const handleMenuItemClick = (item) => {
+  console.log(item);
+  console.log(route);
+  console.log(router);
+  router.push('/about');
+};
 </script>
 
 <style scoped lang="scss">
